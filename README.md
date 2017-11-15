@@ -1,2 +1,2 @@
 # Test-Programs
-Test programs for OS, language, Library...etc.
+Test programs for OS, language, Library, etc.
