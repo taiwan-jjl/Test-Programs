@@ -11,8 +11,8 @@ It is a library I used in my program and I recommand this PCGRNG to replace the 
 
 # Changelog
 ## [Unreleased]
-*  FORTRAN codes are coming up.
-*  OpenMP is a maybe.
+* FORTRAN codes are coming up.
+* OpenMP is a maybe.
 
 ## [0.5] - 2017/11/16
 ### [release]
