@@ -37,7 +37,7 @@ int main() {
     { t0 = omp_get_wtime(); }
 #pragma nounroll // Prevents automatic unrolling by compiler to avoid skewed benchmarks
     for(i = 0; i < n_trials; i++) {
-#pragma omp simd // Ensures that vectorization does occur
+#pragma omp simd aligned(fa01,fa02,fa03,fa04,fa05,fa06,fa07,fa08,fa09,fa10,fb,fc) // Ensures that vectorization does occur
       for (j = 0; j < VECTOR_WIDTH; j++) { // VECTOR_WIDTH=4 for AVX2, =8 for AVX-512
         fa01[j] = fa01[j]*fb[j] + fc[j]; // This is block (E)
         fa02[j] = fa02[j]*fb[j] + fc[j]; // To tune for a specific architecture,
