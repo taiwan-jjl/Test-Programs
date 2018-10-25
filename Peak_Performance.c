@@ -65,7 +65,7 @@ return 0;
 
 /*
 compile:
-icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 -qopt-report-phase=all -qopt-report-file=stout ./peak_performance.c
+icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 -qopt-report-phase=all -qopt-report-file=stdout ./peak_performance.c
 */
 
 /*
