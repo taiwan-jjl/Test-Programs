@@ -74,8 +74,8 @@ icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 
 //Link
 icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 -qopt-report-phase=all -qopt-report-embed -qopt-report-file=stdout ./Peak_Performance.o -o ./Peak_Performance
 //
-If you want to test the "FMA" function, you can add "-no-fma" at the end of each command. It generates the executable without "FMA" which will has half of GFlops of the previous one.
-If you want to test the "SIMD" function, you can use "-qno-openmp-simd" instead of "-qopenmp-simd". It generates the executable without "SIMD" which will has one-fourth of GFlops of the previous one.
+If you want to test the "FMA" function, you can add "-no-fma" at the end of each command. It generates the executable without "FMA" which has half of GFlops of the previous one.
+If you want to test the "SIMD" function, you can use "-qno-openmp-simd" instead of "-qopenmp-simd". It generates the executable without "SIMD" which has one-fourth of GFlops of the previous one.
 */
 
 /*
