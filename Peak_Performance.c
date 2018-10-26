@@ -37,7 +37,7 @@ int main() {
     { t0 = omp_get_wtime(); }
 #pragma nounroll // Prevents automatic unrolling by compiler to avoid skewed benchmarks
     for(i = 0; i < n_trials; i++) {
-#pragma omp simd simdlen(4) aligned(fa01,fa02,fa03,fa04,fa05,fa06,fa07,fa08,fa09,fa10,fb,fc) // Ensures that vectorization does occur
+#pragma omp simd simdlen(VECTOR_WIDTH) aligned(fa01,fa02,fa03,fa04,fa05,fa06,fa07,fa08,fa09,fa10,fb,fc) // Ensures that vectorization does occur
       for (j = 0; j < VECTOR_WIDTH; j++) { // VECTOR_WIDTH=4 for AVX2, =8 for AVX-512
         fa01[j] = fa01[j]*fb[j] + fc[j]; // This is block (E)
         fa02[j] = fa02[j]*fb[j] + fc[j]; // To tune for a specific architecture,
@@ -65,7 +65,16 @@ return 0;
 
 /*
 compile:
-icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 -qopt-report-phase=all -qopt-report-file=stdout ./peak_performance.c
+//Preprocess
+icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 -qopt-report-phase=all -qopt-report-embed -qopt-report-file=stdout -E ./Peak_Performance.c -o ./Peak_Performance.i
+//Compile
+icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 -qopt-report-phase=all -qopt-report-embed -qopt-report-file=stdout -S ./Peak_Performance.i -o ./Peak_Performance.s
+//Assemble
+icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 -qopt-report-phase=all -qopt-report-embed -qopt-report-file=stdout -c ./Peak_Performance.s -o ./Peak_Performance.o
+//Link
+icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 -qopt-report-phase=all -qopt-report-embed -qopt-report-file=stdout ./Peak_Performance.o -o ./Peak_Performance
+//
+if you want to test the "FMA" function, you can add "-no-fma" at the end of each command. It generates the executable without "FMA" which will has half of GFlops of the previous one.
 */
 
 /*
