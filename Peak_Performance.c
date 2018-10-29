@@ -4,7 +4,7 @@
 const int n_trials = 1000000000; // Enough to keep cores busy for a while and observe a steady state
 const int flops_per_calc = 2; // Multiply + add = 2 instructions
 const int n_chained_fmas = 10; // Must be tuned for architectures here and in blocks (R) and in (E)
-const int VECTOR_WIDTH = 4;
+const int VECTOR_WIDTH = 8;
 
 int main() {
 
@@ -76,6 +76,9 @@ icc -std=c11 -Wall -xHost -xCORE-AVX2 -O2 -qopenmp -qopenmp-simd -qopt-report=5 
 //
 If you want to test the "FMA" function, you can add "-no-fma" at the end of each command. It generates the executable without "FMA" which has half of GFlops of the previous one.
 If you want to test the "SIMD" function, you can use "-qno-openmp-simd" instead of "-qopenmp-simd". It generates the executable without "SIMD" which has one-fourth of GFlops of the previous one.
+//
+//For AVX512
+icc -std=c11 -Wall -xHost -xCore-AVX512 -qopt-zmm-usage=high -O2 -qopenmp -qopenmp-simd -qopt-report=5 -qopt-report-phase=all -qopt-report-embed -qopt-report-file=stdout ./Peak_Performance.c
 */
 
 /*
