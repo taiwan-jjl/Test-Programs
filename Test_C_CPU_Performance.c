@@ -5,7 +5,7 @@
 
 const int n_trials = 1000000000; // Enough to keep cores busy for a while and observe a steady state
 const int flops_per_calc = 2; // Multiply + add = 2 instructions
-const int n_chained_fmas = 39; // Must be tuned for architectures here and in blocks (R) and in (E)
+const int n_chained_fmas = 20; // Must be tuned for architectures here and in blocks (R) and in (E)
 const int VECTOR_WIDTH = 8;
 double time_difference=0.0;
 struct timespec start, end;	//C11 only, new method to measure time.

@@ -1,7 +1,7 @@
 CC = icc
 
 ##dynamic, maximum optimization, for intel scalable cpu only, better precision and reproducibility
-CFLAGS_avx512 = -std=c11 -Wall -xHost -xCore-AVX512 -qopt-zmm-usage=high -O3 -ip -ipo -finline-functions -unroll-aggressive -fp-speculation=safe -mp1 -fp-model precise -fimf-precision=high -qno-opt-dynamic-align -fimf-use-svml=true -fma -qopenmp -qopenmp-simd -vec -simd -qopt-report=5 -qopt-report-phase=all #-qopt-report-file=stdout
+CFLAGS_avx512 = -std=c11 -Wall -xCore-AVX512 -qopt-zmm-usage=high -O3 -ip -ipo -finline-functions -unroll-aggressive -fp-speculation=safe -mp1 -fp-model precise -fimf-precision=high -qno-opt-dynamic-align -fimf-use-svml=true -fma -qopenmp -qopenmp-simd -vec -simd -qopt-report=5 -qopt-report-phase=all #-qopt-report-file=stdout
 
 CFLAGS_xhost = -std=c11 -Wall -xHost -O3 -ip -ipo -finline-functions -unroll-aggressive -fp-speculation=safe -mp1 -fp-model precise -fimf-precision=high -qno-opt-dynamic-align -fimf-use-svml=true -fma -qopenmp -qopenmp-simd -vec -simd -qopt-report=5 -qopt-report-phase=all #-qopt-report-file=stdout
 
