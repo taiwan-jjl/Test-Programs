@@ -36,8 +36,8 @@ int main() {
             timespec_get(&start, 1/*TIME_UTC*/);
         }
 
-        #pragma unroll(100)
-        for(int l = 0; l < 100; l++){
+        #pragma unroll(10)
+        for(int l = 0; l < 10; l++){
         #pragma nounroll // Prevents automatic unrolling by compiler to avoid skewed benchmarks
         for(int i = 0; i < n_trials; i++){
             #pragma omp simd simdlen(VECTOR_WIDTH) aligned(fa, fb, fc:align_length)
@@ -60,7 +60,7 @@ int main() {
 
     }
 
-    const double gflops = 1.0e-9*(double)VECTOR_WIDTH*(double)n_trials*(double)flops_per_calc*(double)omp_get_max_threads()*(double)n_chained_fmas*100.0;
+    const double gflops = 1.0e-9*(double)VECTOR_WIDTH*(double)n_trials*(double)flops_per_calc*(double)omp_get_max_threads()*(double)n_chained_fmas*10.0;
     printf("Chained FMAs=%d, vector width=%d, GFLOPs=%.1f, time=%.6f s, performance=%.1f GFLOP/s\n", n_chained_fmas, VECTOR_WIDTH, gflops, time_difference, gflops/time_difference);
 
 

@@ -1,0 +1,26 @@
+Universe = vanilla
+Executable = ./test_num_chain.sh
+#arguments = ""
+Log = ./log/$(Cluster).condor.log
+Output = ./log/$(Cluster).$(Process).stdout
+Error = ./log/$(Cluster).$(Process).stderr
+#Should_transfer_files = IF_NEEDED
+#When_to_transfer_output = ON_EXIT
+#Input = inputfile
+Should_transfer_files = NO
+getenv = True
+
+#Request_memory = 96 GB
+#Rank = Memory >= 64
+#Requirements = ( OpSysAndVer == "SL6")
+Requirements = ( OpSysAndVer == "CentOS7") && (DetectedCpus == 32)
+#Requirements = (DetectedCpus == 32)
+
+Machine_count = 1
+Request_cpus = 32
+
+initialdir = .
+Queue 1
+
+#initialdir = run_2
+#Queue

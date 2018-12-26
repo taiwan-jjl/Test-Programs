@@ -9,12 +9,15 @@ CFLAGS_xhost = -std=c11 -Wall -xHost -O3 -ip -ipo -finline-functions -unroll-agg
 avx512:
 		$(CC) $(CFLAGS_avx512) Test_C_CPU_Performance.c -o Test_C_CPU_Performance
 		$(CC) $(CFLAGS_avx512) Test_C_CPU-RAM_Performance.c -o Test_C_CPU-RAM_Performance
+		$(CC) $(CFLAGS_avx512) Test_C_RAM_Performance.c -o Test_C_RAM_Performance
 
 xhost:
 		$(CC) $(CFLAGS_xhost) Test_C_CPU_Performance.c -o Test_C_CPU_Performance
 		$(CC) $(CFLAGS_xhost) Test_C_CPU-RAM_Performance.c -o Test_C_CPU-RAM_Performance
+		$(CC) $(CFLAGS_avx512) Test_C_RAM_Performance.c -o Test_C_RAM_Performance
 
 clean:
 		rm -f ./*.optrpt
 		rm -f ./Test_C_CPU_Performance
 		rm -f ./Test_C_CPU-RAM_Performance
+		rm -f ./Test_C_RAM_Performance

@@ -1,0 +1,60 @@
+# of chained FMA is: 1
+The number of threads is 32
+Chained FMAs=1, vector width=8, GFLOPs=102.4, time=5.776724 s, performance=17.7 GFLOP/s
+# of chained FMA is: 2
+The number of threads is 32
+Chained FMAs=2, vector width=8, GFLOPs=204.8, time=11.678879 s, performance=17.5 GFLOP/s
+# of chained FMA is: 3
+The number of threads is 32
+Chained FMAs=3, vector width=8, GFLOPs=307.2, time=17.576437 s, performance=17.5 GFLOP/s
+# of chained FMA is: 4
+The number of threads is 32
+Chained FMAs=4, vector width=8, GFLOPs=409.6, time=23.443664 s, performance=17.5 GFLOP/s
+# of chained FMA is: 5
+The number of threads is 32
+Chained FMAs=5, vector width=8, GFLOPs=512.0, time=29.339303 s, performance=17.5 GFLOP/s
+# of chained FMA is: 6
+The number of threads is 32
+Chained FMAs=6, vector width=8, GFLOPs=614.4, time=35.166286 s, performance=17.5 GFLOP/s
+# of chained FMA is: 7
+The number of threads is 32
+Chained FMAs=7, vector width=8, GFLOPs=716.8, time=41.076023 s, performance=17.5 GFLOP/s
+# of chained FMA is: 8
+The number of threads is 32
+Chained FMAs=8, vector width=8, GFLOPs=819.2, time=47.013556 s, performance=17.4 GFLOP/s
+# of chained FMA is: 9
+The number of threads is 32
+Chained FMAs=9, vector width=8, GFLOPs=921.6, time=52.844503 s, performance=17.4 GFLOP/s
+# of chained FMA is: 10
+The number of threads is 32
+Chained FMAs=10, vector width=8, GFLOPs=1024.0, time=58.697370 s, performance=17.4 GFLOP/s
+# of chained FMA is: 11
+The number of threads is 32
+Chained FMAs=11, vector width=8, GFLOPs=1126.4, time=64.744900 s, performance=17.4 GFLOP/s
+# of chained FMA is: 12
+The number of threads is 32
+Chained FMAs=12, vector width=8, GFLOPs=1228.8, time=70.374438 s, performance=17.5 GFLOP/s
+# of chained FMA is: 13
+The number of threads is 32
+Chained FMAs=13, vector width=8, GFLOPs=1331.2, time=76.327488 s, performance=17.4 GFLOP/s
+# of chained FMA is: 14
+The number of threads is 32
+Chained FMAs=14, vector width=8, GFLOPs=1433.6, time=82.282771 s, performance=17.4 GFLOP/s
+# of chained FMA is: 15
+The number of threads is 32
+Chained FMAs=15, vector width=8, GFLOPs=1536.0, time=87.919925 s, performance=17.5 GFLOP/s
+# of chained FMA is: 16
+The number of threads is 32
+Chained FMAs=16, vector width=8, GFLOPs=1638.4, time=94.019684 s, performance=17.4 GFLOP/s
+# of chained FMA is: 17
+The number of threads is 32
+Chained FMAs=17, vector width=8, GFLOPs=1740.8, time=98.743502 s, performance=17.6 GFLOP/s
+# of chained FMA is: 18
+The number of threads is 32
+Chained FMAs=18, vector width=8, GFLOPs=1843.2, time=104.731139 s, performance=17.6 GFLOP/s
+# of chained FMA is: 19
+The number of threads is 32
+Chained FMAs=19, vector width=8, GFLOPs=1945.6, time=110.425498 s, performance=17.6 GFLOP/s
+# of chained FMA is: 20
+The number of threads is 32
+Chained FMAs=20, vector width=8, GFLOPs=2048.0, time=116.265827 s, performance=17.6 GFLOP/s
