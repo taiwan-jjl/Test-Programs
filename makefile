@@ -14,10 +14,13 @@ avx512:
 xhost:
 		$(CC) $(CFLAGS_xhost) Test_C_CPU_Performance.c -o Test_C_CPU_Performance
 		$(CC) $(CFLAGS_xhost) Test_C_CPU-RAM_Performance.c -o Test_C_CPU-RAM_Performance
-		$(CC) $(CFLAGS_avx512) Test_C_RAM_Performance.c -o Test_C_RAM_Performance
+		$(CC) $(CFLAGS_xhost) Test_C_RAM_Performance.c -o Test_C_RAM_Performance
 
 clean:
 		rm -f ./*.optrpt
 		rm -f ./Test_C_CPU_Performance
 		rm -f ./Test_C_CPU-RAM_Performance
 		rm -f ./Test_C_RAM_Performance
+
+debug:		
+		$(CC) $(CFLAGS_xhost) -E Test_C_CPU_Performance.c -o Test_C_CPU_Performance
