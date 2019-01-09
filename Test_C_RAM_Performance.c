@@ -1,3 +1,5 @@
+//unfinished, 20190109
+//
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
