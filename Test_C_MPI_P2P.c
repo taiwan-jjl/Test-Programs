@@ -1,5 +1,5 @@
 /*
-**Copyright (C) 2017, Jyong-Jhih Lin.
+**Copyright (C) 2019, Jyong-Jhih Lin.
 **All rights reserved.
 **Licensed under the GNU Affero General Public License v3.0. See LICENSE file in the project root for full license information.
 */
@@ -17,8 +17,8 @@ mpiicc(icc) -std=c11 -Wall -O0 <file> -lm
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
-#include <limits.h>
+//#include <math.h>
+//#include <limits.h>
 #include <mpi.h>
 
 
@@ -42,11 +42,11 @@ MPI_Barrier(MPI_COMM_WORLD);
 int number=0;
 for(int i=0; i<size; i++){
      for(int j=0; j<size; j++){
-          if(rank == i){
+          if(rank == i && i != j){
                number = 1;
                MPI_Send(&number, 1, MPI_INT, j, 0, MPI_COMM_WORLD);
           }
-          else if(rank == j){
+          else if(rank == j && i != j){
                number = 0;
                MPI_Recv(&number, 1, MPI_INT, i, 0, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
                printf("Process %s Rank %d received status %d from Rank %d\n", name, j, number, i);
