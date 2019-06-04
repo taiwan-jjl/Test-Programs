@@ -24,3 +24,10 @@ clean:
 
 debug:		
 		$(CC) $(CFLAGS_xhost) -E Test_C_CPU_Performance.c -o Test_C_CPU_Performance
+
+
+## "-E" = Causes the preprocessor to send output to stdout.
+##Description
+##This option causes the preprocessor to send output to stdout . Compilation stops when the files have beenpreprocessed.
+##When you specify this option, the compiler's preprocessor expands your source module and writes the result
+##to stdout . The preprocessed source contains #line directives, which the compiler uses to determine thesource file and line number.
